@@ -187,7 +187,23 @@ pip install g4f[webview]
 3. Run the app with:
 
 ```python
+import subprocess
+import atexit
 from g4f.gui.webview import run_webview
+
+# Define function to clear pip cache
+def clear_pip_cache():
+    try:
+        # Run the command to clear the pip cache
+        subprocess.run(["pip", "cache", "purge"], check=True)
+        print("Pip cache cleared successfully.")
+    except subprocess.CalledProcessError as e:
+        print(f"Error clearing pip cache: {e}")
+
+# Register the clear_pip_cache function to be called upon exiting the script
+atexit.register(clear_pip_cache)
+
+# Run the webview
 run_webview(debug=True)
 ```
 or execute the following command:
