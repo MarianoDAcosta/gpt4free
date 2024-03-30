@@ -161,7 +161,7 @@ image_url = response.data[0].url
 ```
 
 
-[![Image with cat](/docs/cat.jpeg)](/docs/client.md)
+[![Image with cat](/docs/cat.jpg)](/docs/client.md)
 
 **Full Documentation for Python API**
 
